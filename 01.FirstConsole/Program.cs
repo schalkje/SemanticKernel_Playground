@@ -4,6 +4,8 @@ using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.OpenAI;
 using Microsoft.SemanticKernel.Services;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
 
 // Get the apiKey from the user secrets
 var config = new ConfigurationBuilder().AddUserSecrets<Program>().Build();
@@ -15,10 +17,24 @@ var modelId = config["OpenAI:ModelId"];
 
 // Create a kernel with Azure OpenAI chat completion
 //var builder = Kernel.CreateBuilder().AddAzureOpenAIChatCompletion(modelId, endpoint, apiKey);
-var builder = Kernel.CreateBuilder().AddOpenAIChatCompletion(modelId, apiKey);
+var builder = Kernel.CreateBuilder();
+builder.AddOpenAIChatCompletion(modelId, apiKey);
 
 // Add enterprise components
 //builder.Services.AddLogging(services => services.AddConsole().SetMinimumLevel(LogLevel.Trace));
+using var loggerFactory = LoggerFactory.Create(builder =>
+{
+    // Add OpenTelemetry as a logging provider
+    builder
+        .AddConsole()
+        .SetMinimumLevel(LogLevel.Trace); // Set the minimum log level
+
+});
+
+//IKernelBuilder builder = Kernel.CreateBuilder();
+builder.Services.AddSingleton(loggerFactory);
+//builder.AddAzureOpenAIChatCompletion(/* Your configuraton */).Build();
+
 
 
 // Build the kernel

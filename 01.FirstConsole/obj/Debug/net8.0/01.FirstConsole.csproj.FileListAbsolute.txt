@@ -36,3 +36,10 @@ C:\repo\SK_Playground\01.FirstConsole\obj\Debug\net8.0\refint\01.FirstConsole.dl
 C:\repo\SK_Playground\01.FirstConsole\obj\Debug\net8.0\01.FirstConsole.pdb
 C:\repo\SK_Playground\01.FirstConsole\obj\Debug\net8.0\01.FirstConsole.genruntimeconfig.cache
 C:\repo\SK_Playground\01.FirstConsole\obj\Debug\net8.0\ref\01.FirstConsole.dll
+C:\repo\SK_Playground\01.FirstConsole\obj\Debug\net8.0\01.FirstConsole.sourcelink.json
+C:\repo\SK_Playground\01.FirstConsole\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\repo\SK_Playground\01.FirstConsole\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\repo\SK_Playground\01.FirstConsole\bin\Debug\net8.0\Microsoft.Extensions.Logging.Configuration.dll
+C:\repo\SK_Playground\01.FirstConsole\bin\Debug\net8.0\Microsoft.Extensions.Logging.Console.dll
+C:\repo\SK_Playground\01.FirstConsole\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\repo\SK_Playground\01.FirstConsole\bin\Debug\net8.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
