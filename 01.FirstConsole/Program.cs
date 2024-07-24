@@ -21,19 +21,7 @@ var builder = Kernel.CreateBuilder();
 builder.AddOpenAIChatCompletion(modelId, apiKey);
 
 // Add enterprise components
-//builder.Services.AddLogging(services => services.AddConsole().SetMinimumLevel(LogLevel.Trace));
-using var loggerFactory = LoggerFactory.Create(builder =>
-{
-    // Add OpenTelemetry as a logging provider
-    builder
-        .AddConsole()
-        .SetMinimumLevel(LogLevel.Trace); // Set the minimum log level
-
-});
-
-//IKernelBuilder builder = Kernel.CreateBuilder();
-builder.Services.AddSingleton(loggerFactory);
-//builder.AddAzureOpenAIChatCompletion(/* Your configuraton */).Build();
+builder.Services.AddLogging(services => services.AddConsole().SetMinimumLevel(LogLevel.Trace));
 
 
 
